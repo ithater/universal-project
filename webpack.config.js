@@ -59,7 +59,7 @@ const babelOptions = (preset, plugins) => {
 };
 
 const PATHS = {
-  dist: path.resolve(__dirname, 'docs'),
+  dist: path.resolve(__dirname, 'build'),
   src: path.resolve(__dirname, 'src'),
   assets: '/assets',
 };
