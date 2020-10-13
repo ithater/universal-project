@@ -8,7 +8,7 @@ body
   @include _767
     padding-top: 75px
 .container
-  max-width: 1170px
+  max-width: 1140px
   margin: auto
   @include _1200
     max-width: 960px
@@ -20,5 +20,21 @@ body
     max-width: 87.5%
 button
   cursor: pointer
+.button-arrow
+  display: inline-flex
+  padding: 10px 20px
+  background-color: $blue-btn
+  border-radius: 20px
+  @include bonone
+  &__read
+    margin-right: 5px
+    font-style: normal
+    font-weight: 900
+    font-size: 14px
+    line-height: 20px
+    color: $light
+  &__arrow-icon
+    width: 20px
+    height: 20px
 img
   width: 100%

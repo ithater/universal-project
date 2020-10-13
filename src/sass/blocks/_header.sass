@@ -2,7 +2,7 @@
   padding-top: 16px
   padding-bottom: 15px
   background-color: $bg-dark
-  @include _767   
+  @include _767
     position: fixed
     top: 0
     left: 0
@@ -43,6 +43,7 @@
       display: flex
       justify-content: space-between
       padding: 0
+      padding-bottom: 2px
       margin: 0
       width: 531px
       list-style: none
@@ -52,11 +53,10 @@
       @include _767
         flex-direction: column
         align-items: center
-    
+
     &__item
       @include _767
         margin-bottom: 30px
-
 
     &__link
       font-family: Lato
@@ -115,13 +115,13 @@
 .burger
   display: none
   padding: 0
+  background-color: transparent
   @include _767
     display: flex
     flex-direction: column
     justify-content: space-between
     height: 18px
   @include bonone
-  background-color: transparent
   &__line
     width: 22px
     height: 2px
