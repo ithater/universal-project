@@ -29,7 +29,7 @@ const optimization = () => {
   return config;
 };
 
-const cssLoaders = extra => {
+const cssLoaders = (extra) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
@@ -42,8 +42,7 @@ const cssLoaders = extra => {
     'postcss-loader'
   ];
   
-  if (extra) loaders.push(extra);
-
+  if (extra) loaders.push(...extra);
   return loaders;
 };
 const babelOptions = (preset, plugins) => {
@@ -98,18 +97,18 @@ module.exports = {
       chunks: ['main'],
     }),
     new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: `${PATHS.src}/${PATHS.assets}/image`,
-    //       to: `${PATHS.dist}/${PATHS.assets}/image`,
-    //     },
-    //     {
-    //       from: `${PATHS.src}/${PATHS.assets}/fonts`,
-    //       to: `${PATHS.dist}/${PATHS.assets}/fonts`,
-    //     },
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: `${PATHS.src}/${PATHS.assets}/image`,
+          to: `${PATHS.dist}/${PATHS.assets}/image`,
+        },
+        // {
+        //   from: `${PATHS.src}/${PATHS.assets}/fonts`,
+        //   to: `${PATHS.dist}/${PATHS.assets}/fonts`,
+        // },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: `css/${filename('css')}`,
     }),
@@ -122,7 +121,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/,
-        use: cssLoaders('sass-loader'),
+        use: cssLoaders(['sass-loader']),
       },
       {
         test: /img\.svg$|\.(png|jpg|jpeg|gif)$/,

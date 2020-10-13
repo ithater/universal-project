@@ -1,0 +1,118 @@
+.header
+  padding-top: 16px
+  padding-bottom: 15px
+  background-color: $bg-dark
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @include _1200
+      flex-wrap: wrap
+  &-navbar
+    @include _1200
+      width: 100%
+      margin-top: 25px
+      order: 1
+    @include _767
+      display: none
+      margin-top: 0
+      &--mobile-visible
+        position: fixed
+        padding-top: 31px
+        padding-bottom: 100px
+        top: 75px
+        left: 0
+        right: 0
+        bottom: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        height: 100%
+        width: 100%
+        background: #343C44
+        overflow-y: scroll
+
+    &__list
+      display: flex
+      justify-content: space-between
+      padding: 0
+      margin: 0
+      width: 531px
+      list-style: none
+
+      @include _1200
+        width: 100%
+      @include _767
+        flex-direction: column
+        align-items: center
+    
+    &__item
+      @include _767
+        margin-bottom: 20px
+
+    &__link
+      font-family: latoblack
+      font-style: normal
+      font-weight: 900
+      font-size: 14px
+      line-height: 20px
+
+      color: $light
+      text-decoration: none
+      @include _767
+        font-size: 24px
+
+  &__search
+    position: relative
+    width: 263px
+    min-height: 39px
+    overflow: hidden
+    border-radius: 10px
+    &--desktop-hidden
+      display: none
+    @include _1200
+      width: 400px
+    @include _767
+      display: none
+      &--mobile-visible
+        width: 263px
+        display: block
+        margin-bottom: 35px
+  &__input
+    width: 100%
+    min-height: 39px
+    padding: 9px 65px 10px 25px
+    background-color: #656B70
+    font-size: 14px
+    line-height: 20px
+    &::placeholder
+      color: #939699
+    @include bonone
+
+  &__button
+    position: absolute
+    right: 25px
+    top: 9px
+
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 20px
+    height: 20px
+    background-color: transparent
+    @include bonone
+.burger
+  display: none
+  padding: 0
+  @include _767
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 18px
+  @include bonone
+  background-color: transparent
+  &__line
+    width: 22px
+    height: 2px
+    border-radius: 1px
+    background: #C4C4C4
