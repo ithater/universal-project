@@ -21,10 +21,14 @@ body
 button
   cursor: pointer
 .button-arrow
+  position: relative
+  z-index: 1
   display: inline-flex
   padding: 10px 20px
   background-color: $blue-btn
   border-radius: 20px
+  color: $light
+  overflow: hidden
   @include bonone
   &__read
     margin-right: 5px
@@ -32,9 +36,21 @@ button
     font-weight: 900
     font-size: 14px
     line-height: 20px
-    color: $light
   &__arrow-icon
     width: 20px
     height: 20px
+  &::before
+    content: ''
+    @include absolute-full
+    z-index: -1
+    background-color: rgba(0, 0, 0, 0)
+    transition: 0.35s
+  @include smart-hover
+    &:hover
+      &::before
+        background-color: rgba(0, 0, 0, 0.09)
+      
+  
+    
 img
   width: 100%

@@ -64,11 +64,15 @@
       font-weight: 900
       font-size: 14px
       line-height: 20px
-
       color: $light
       text-decoration: none
       @include _767
         font-size: 24px
+      @include smart-hover
+        transition: .2s
+        &:hover
+          color: #e0e0e0
+          
 
   &__search
     position: relative
