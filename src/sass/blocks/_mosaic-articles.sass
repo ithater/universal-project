@@ -1,0 +1,534 @@
+.mosaic-articles
+  padding-bottom: 60px
+  @include _992
+    padding-bottom: 40px
+  &__wrapper
+    display: grid
+    grid-template-columns: repeat(4, 263px)
+    grid-template-rows: repeat(4, 170px)
+    grid-gap: 30px
+    @include _1200
+      grid-template-rows: repeat(6, 170px)
+      grid-template-columns: 265px 71px 161px 80px 263px
+    @include _992
+      grid-template-rows: repeat(8, 170px)
+      grid-template-columns: 229px 4px 116px 50px 184px
+    @include _767
+      grid-gap: 20px
+      grid-template-rows: 392px 370px 170px 170px 370px repeat(3, 170px) 1fr 170px
+      grid-template-columns: 1fr
+  &-dream-job
+    position: relative
+    z-index: 1
+    grid-column: 1 / 3
+    grid-row: 1 / 3
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background-color: #fff
+    z-index: 0
+    border-radius: 10px
+    text-decoration: none
+    overflow: hidden
+    @include _1200
+      grid-column: 1 / 4
+    @include _992
+      grid-column: 1 / -1
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 1 / 2
+      &::before
+        content: ''
+        z-index: -1
+        @include absolute-full
+        background-color: rgba(255, 255, 255, 0.9)
+        
+    &__background-image
+      position: absolute
+      top: 15px
+      right: 0
+      z-index: -2
+      width: 292px
+      height: 299px
+      object-fit: cover
+    &-text
+      max-width: 238px
+      max-height: 280px
+      min-height: 280px
+      margin-top: 35px
+      margin-left: 35px
+      overflow: hidden
+      @include _767
+        margin-left: 18px
+        max-height: 270px
+        min-height: 270px
+      &__link
+        text-decoration: none
+        @include smart-hover
+          &:hover
+            .mosaic-articles-dream-job-text__title
+              color: #585555
+            .mosaic-articles-dream-job-text__about,
+              color: #818181
+      &__rubric
+        margin-top: 0
+        margin-bottom: 20px
+        font-style: normal
+        font-weight: 900
+        font-size: 12px
+        line-height: 15px
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        color: #6E99AE
+      &__title
+        margin-top: 0
+        margin-bottom: 25px
+        font-family: Roboto Slab
+        font-style: normal
+        font-weight: bold
+        font-size: 25px
+        line-height: 30px
+        color: $title
+      &__about
+        margin: 0
+        font-size: 14px
+        line-height: 20px
+        color: $text
+    &__info
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      padding: 12px 25px 13px
+      border-top: 1px solid $border
+      @include _767
+        flex-wrap: wrap
+        padding: 12px 16px 12px 18px
+    &-author
+      display: flex
+      align-items: center
+      @include _767
+        flex-basis: 100%
+
+      &__holder
+        @include _767
+          display: flex
+          flex-direction: column
+      &__icon
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        object-fit: cover
+        margin-right: 10px
+      &__name
+        font-weight: 900
+        font-size: 14px
+        line-height: 20px
+        color: $title
+        margin-right: 5px
+        @include _767
+          font-size: 10px
+      &__quote
+        text-decoration: none
+        font-size: 14px
+        line-height: 20px
+        color: #4B5157
+        @include _767
+          font-size: 10px
+        @include smart-hover
+          &:hover
+            color: #818181
+    &-comments
+      display: flex
+      align-items: center
+      cursor: pointer
+      text-decoration: none
+      @include _767
+        margin-left: auto
+        margin-top: 6px
+      &__icon
+        width: 15px
+        height: 15px
+      &__counter
+        font-size: 12px
+        line-height: 15px
+        color: #939699
+        margin-left: 5.75px
+
+  &-popular
+    position: relative
+    grid-column: 3 / 4
+    grid-row: 1 / 3
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 19px 26px 25px 25px
+    border-radius: 10px
+    overflow: hidden
+    text-decoration: none
+    @include _1200
+      grid-column: 4 / 6
+    @include _992
+      grid-column: 1 / 4
+      grid-row: 3 / 5
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 2 / 3
+    &__background-image
+      z-index: -2
+      object-fit: cover
+      @include absolute-full
+    &__popular-icon
+      align-self: flex-start
+      padding: 5px 12px
+      background: $green
+      border-radius: 3px
+      font-size: 12px
+      line-height: 15px
+      color: $light
+    &__wrapper
+      min-height: 185px
+    &-text
+      &__link
+        text-decoration: none
+        max-width: 203px
+        @include smart-hover
+          &:hover
+            .mosaic-articles-popular-text__title
+              color: #f3f1f1
+            
+          
+      &__rubric
+        display: inline-block
+        margin-bottom: 23px
+        font-style: normal
+        font-weight: 900
+        font-size: 12px
+        line-height: 15px
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        color: #E7D9FF
+      &__title
+        margin-top: 0
+        margin-bottom: 27px
+        font-family: Roboto Slab
+        font-style: normal
+        font-weight: bold
+        font-size: 16px
+        line-height: 25px
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        color: $light
+    &-info
+      display: flex
+      &__wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        margin-left: 10px
+      &__author
+        &-icon
+          width: 45px
+          height: 45px
+          border-radius: 50%
+        &-name
+          font-size: 14px
+          line-height: 20px
+          color: $light
+          mix-blend-mode: normal
+          opacity: 0.85
+      &__control-panel
+        color: #FFFFFF
+        mix-blend-mode: normal
+        opacity: 0.4
+      &__date
+        margin-right: 5px
+
+  &-download
+    position: relative
+    z-index: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-decoration: none
+    background: #3BBDC4
+    border-radius: 10px
+    grid-column: 4 / 5
+    grid-row: 1 / 1
+    @include _1200
+      grid-column: 4 / 6
+      grid-row: 5 / 6
+    @include _992
+      grid-column: 1 / 5
+      grid-row: 8 / 9
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 8 / 9
+    &__document-icon
+      position: absolute
+      top: 20px
+      right: 10px
+      width: 80px
+      height: 80px
+      z-index: -1
+    &__wrapper
+      padding: 25px 25px 0
+    &__title
+      margin-top: 0
+      margin-bottom: 10px
+      font-family: Roboto Slab
+      font-style: normal
+      font-weight: bold
+      font-size: 16px
+      line-height: 25px
+      color: $light
+    &__size
+      font-size: 14px
+      line-height: 20px
+      color: #C1F4F5
+    &__button
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 12px 20px 13px
+      border-top: 1px solid #96E2E3
+      text-decoration: none
+      color: $light
+      @include smart-hover
+        &:hover
+          color: #f1f1f1
+          .mosaic-articles-download__download-icon
+            fill: #f1f1f1
+    &__download-icon
+      margin-right: 10px
+      width: 20px
+      height: 20px
+      fill: white
+
+  &-tags
+    grid-column: 4 / 5
+    grid-row: 2 / 4
+    background-color: #fff
+    border-radius: 10px
+    @include _1200
+      grid-column: 5 / 6
+      grid-row: 3 / 5
+    @include _992
+      grid-column: 1 / 3
+      grid-row: 5 / 7
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 9 / 10
+
+    &__title
+      margin: 0
+      padding: 20px 5px 25px 19px
+      border-bottom: 1px solid $border
+      font-weight: 900
+      font-size: 14px
+      line-height: 20px
+      letter-spacing: 0.5px
+      text-transform: uppercase
+      color: $title
+    &__list
+      display: flex
+      flex-wrap: wrap
+      margin: 0px
+      padding: 25px 20px 30px 25px
+      list-style: none
+    &__item
+      margin-bottom: 15px
+      margin-right: 10px
+      border: 1px solid $border
+      border-radius: 5px
+      overflow: hidden
+      // &:nth-child(2n + 1)
+      //   margin-right: 10px
+      // &:nth-child(10)
+      //   margin-right: 10px
+      // &:nth-child(11)
+      //   margin-right: 0
+      // &:nth-child(12)
+      //   margin-bottom: 0
+      //   margin-right: 10px
+      // &:nth-child(13)
+      //   margin-bottom: 0
+      //   margin-right: 0
+    &__link
+      position: relative
+      z-index: 1
+      display: inline-block
+      padding: 5px 15.2px 5px 14.7px
+      font-weight: 900
+      font-size: 14px
+      line-height: 20px
+      text-decoration: none
+      color: #262D33
+      &::before
+        content: ''
+        background-color: rgba(166, 222, 255, 0)
+        transition: .2s
+        z-index: -1
+        @include absolute-full
+      @include smart-hover
+        &:hover
+          &::before
+            background-color: rgba(53, 53, 53,0.15)
+
+  &-social-networking
+    grid-column: 4 / 5
+    grid-row: 4 / 5
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 30px 25px 40px
+    background-color: #fff
+    border-radius: 10px
+    @include _1200
+      grid-column: 1 / 6
+      grid-row: 6 / 7
+    @include _992
+      grid-column: 5 / 6
+      grid-row: 7 / 9
+      padding: 30px 17px 40px
+    @include _767
+      padding: 30px 45px 40px
+      grid-column: 1 / 2
+      grid-row: 10 / 11
+    &__title
+      margin-top: 0
+      margin-bottom: 25px
+      font-family: Roboto Slab
+      font-style: normal
+      font-weight: bold
+      font-size: 20px
+      line-height: 25px
+      color: $title
+    &__wrapper
+      display: flex
+      justify-content: space-between
+      width: 100%
+      @include _1200
+        width: 568px
+      @include _992
+        width: 50px
+        height: 262px
+        flex-direction: column
+      @include _767
+        width: 100%
+        height: 50px
+        flex-direction: row
+    &__link
+      text-decoration: none
+    &__icon
+      width: 50px
+      height: 50px
+
+  &-methods
+    grid-column: 3 / 4
+    grid-row: 4 / 5
+    @include _1200
+      grid-column: 1 / 2
+      grid-row: 5 / 6
+    @include _992
+      grid-column: 4 / 6
+      grid-row: 4 / 5
+    @include _767
+      width: 100%
+      grid-column: 1 / 2
+      grid-row: 6 / 7
+
+  &-сustomers
+    grid-column: 3 / 4
+    grid-row: 3 / 4
+    @include _1200
+      width: 100%
+      grid-column: 3 / 5
+      grid-row: 4 / 5
+    @include _992
+      grid-column: 2 / 5
+      grid-row: 7 / 8
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 4 / 5
+
+  &-reference
+    grid-column: 2 / 3
+    grid-row: 3 / 4
+    @include _1200
+      width: 100%
+      grid-column: 3 / 5
+      grid-row: 3 / 4
+    @include _992
+      grid-column: 1 / 2
+      grid-row: 7 / 8
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 3 / 4
+
+    
+
+  &-job
+    grid-column: 2 / 3
+    grid-row: 4 / 5
+    @include _1200
+      width: 100%
+      grid-column: 2 / 4
+      grid-row: 5 / 6
+    @include _992
+      grid-column: 4 / 6
+      grid-row: 3 / 4
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 7 / 8
+
+  &-tools
+    grid-column: 1 / 2
+    grid-row: 3 / 5
+    display: flex
+    flex-direction: column
+    background-color: #fff
+    border-radius: 10px
+    overflow: hidden
+    text-decoration: none
+    @include _1200
+      grid-column: 1 / 3
+    @include _992
+      grid-column: 3 / 6
+      grid-row: 5 / 7
+    @include _767
+      grid-column: 1 / 2
+      grid-row: 5 / 6
+    &__wrapper
+      display: flex
+      align-items: center
+      @include _992
+        height: calc( 100% - 294px )
+      @include _767
+        height: calc( 100% - 275px )
+
+    &__image
+      width: 100%
+      height: 275px
+      object-fit: cover
+      @include _992
+        height: 294px
+      @include _767
+        height: 275px
+    &__link
+      display: block
+      text-decoration: none
+      @include smart-hover
+        &:hover
+          .mosaic-articles-tools__title
+            color: #585555
+    &__title
+      margin: 0
+      margin-top: auto
+      padding: 0 25px 0
+      font-family: Roboto Slab
+      font-style: normal
+      font-weight: bold
+      font-size: 16px
+      line-height: 25px
+      color: $title

@@ -18,6 +18,8 @@ body
     max-width: 90%
   @include _576
     max-width: 87.5%
+img
+  width: 100%
 button
   cursor: pointer
 .button-arrow
@@ -41,16 +43,83 @@ button
     height: 20px
   &::before
     content: ''
-    @include absolute-full
     z-index: -1
     background-color: rgba(0, 0, 0, 0)
     transition: 0.35s
+    @include absolute-full
   @include smart-hover
     &:hover
       &::before
         background-color: rgba(0, 0, 0, 0.09)
-      
-  
-    
-img
-  width: 100%
+.control-panel
+  display: flex
+  align-items: center
+  font-size: 12px
+  line-height: 15px
+  color: #939699
+  &__date
+    margin-right: 10px
+  &-comments
+    display: flex
+    align-items: center
+    margin-right: 10px
+    text-decoration: none
+    color: inherit
+    &__icon
+      width: 15px
+      height: 15px
+      margin-right: 5px
+  &-likes
+    display: flex
+    align-items: center
+    text-decoration: none
+    color: inherit
+    &__icon
+      width: 15px
+      height: 15px
+      margin-right: 5px
+
+.article-card
+  position: relative
+  z-index: 1
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  width: 263px
+  min-height: 170px
+  padding: 25px 25px 30px
+  background-color: #ffffff
+  border-radius: 10px
+  text-decoration: none
+  overflow: hidden
+  &-text
+    text-decoration: none
+    @include smart-hover
+      &:hover
+        .article-card-text__title
+          color: #585555
+        .article-card-text__about,
+          color: #818181
+    &__title
+      margin-top: 0
+      margin-bottom: 5px
+      font-family: Roboto Slab
+      font-style: normal
+      font-weight: bold
+      font-size: 16px
+      line-height: 25px
+      color: $title
+    &__about
+      font-family: Lato
+      font-style: normal
+      font-weight: normal
+      font-size: 14px
+      line-height: 20px
+      color: $text
+  &__date
+    font-family: Lato
+    font-style: normal
+    font-weight: normal
+    font-size: 12px
+    line-height: 15px
+    color: #939699

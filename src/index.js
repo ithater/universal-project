@@ -1,3 +1,8 @@
+// подключение lazy-load-attrubute
+import 'loading-attribute-polyfill';
+
+
+
 // подключение normalize
 import 'normalize.css';
 import './sass/index.sass';
