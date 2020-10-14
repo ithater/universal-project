@@ -1,5 +1,5 @@
 .mosaic-articles
-  padding-bottom: 60px
+  padding-bottom: 58px
   @include _992
     padding-bottom: 40px
   &__wrapper
@@ -40,9 +40,9 @@
       &::before
         content: ''
         z-index: -1
-        @include absolute-full
         background-color: rgba(255, 255, 255, 0.9)
-        
+        @include absolute-full
+
     &__background-image
       position: absolute
       top: 15px
@@ -88,6 +88,7 @@
         font-weight: bold
         font-size: 25px
         line-height: 30px
+        letter-spacing: 0.5px
         color: $title
       &__about
         margin: 0
@@ -99,7 +100,7 @@
       align-items: center
       justify-content: space-between
       width: 100%
-      padding: 12px 25px 13px
+      padding: 10px 31px 13px
       border-top: 1px solid $border
       @include _767
         flex-wrap: wrap
@@ -196,8 +197,7 @@
           &:hover
             .mosaic-articles-popular-text__title
               color: #f3f1f1
-            
-          
+
       &__rubric
         display: inline-block
         margin-bottom: 23px
@@ -322,7 +322,7 @@
 
     &__title
       margin: 0
-      padding: 20px 5px 25px 19px
+      padding: 20px 10px 17px 24px
       border-bottom: 1px solid $border
       font-weight: 900
       font-size: 14px
@@ -337,8 +337,8 @@
       padding: 25px 20px 30px 25px
       list-style: none
     &__item
-      margin-bottom: 15px
-      margin-right: 10px
+      margin-bottom: 13px
+      margin-right: 7px
       border: 1px solid $border
       border-radius: 5px
       overflow: hidden
@@ -407,7 +407,7 @@
     &__wrapper
       display: flex
       justify-content: space-between
-      width: 100%
+      width: 89%
       @include _1200
         width: 568px
       @include _992
@@ -466,8 +466,6 @@
       grid-column: 1 / 2
       grid-row: 3 / 4
 
-    
-
   &-job
     grid-column: 2 / 3
     grid-row: 4 / 5
@@ -502,6 +500,7 @@
     &__wrapper
       display: flex
       align-items: center
+      height: calc( 100% - 275px )
       @include _992
         height: calc( 100% - 294px )
       @include _767
@@ -523,7 +522,6 @@
           .mosaic-articles-tools__title
             color: #585555
     &__title
-      margin: 0
       margin-top: auto
       padding: 0 25px 0
       font-family: Roboto Slab
@@ -532,3 +530,8 @@
       font-size: 16px
       line-height: 25px
       color: $title
+      width: 230px
+      @include _992
+        width: 100%
+      @include _576
+        width: 230px
