@@ -1750,11 +1750,15 @@
 				<div class="subscribe footer__subscribe">
 					<h2 class="subscribe__title">Подпишитесь на нашу рассылку</h2>
 					<form class="subscribe-form subscribe__form" id="subscribe-form">
-						<input
-							type="email"
-							placeholder="Email"
-							class="subscribe-form__input"
-						/>
+						<div class="subscribe-form__holder">
+							<input
+								type="email"
+                placeholder="Email"]
+                name="email"
+								class="subscribe-form__input"
+								required
+              />
+						</div>
 						<button type="submit" class="subscribe-form__button">
 							Подписаться
 						</button>
@@ -1764,172 +1768,185 @@
 				<!-- /.subscribe -->
 
 				<nav class="footer-navigation footer__navigation">
-          <div class="footer-navigation__wrapper">
-            <ul class="footer-navigation-list footer-navigation__list  footer-navigation-list--news">
-              <li class="footer-navigation-list__heading">
-                <h2 class="footer-navigation-list__title">Новости</h2>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Обновления</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Экспресс</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Политика</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link"
-                  >Солнечное затмение</a
-                >
-              </li>
-            </ul>
-            <!-- /.footer-navigation-list -->
-  
-            <ul class="footer-navigation-list footer-navigation__list  footer-navigation-list--articles">
-              <li class="footer-navigation-list__heading">
-                <h2 class="footer-navigation-list__title">Статьи</h2>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">HTML</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">CSS</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">JavaScript</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Web Design</a>
-              </li>
-            </ul>
-            <!-- /.footer-navigation-list -->
-  
-            <ul class="footer-navigation-list footer-navigation__list  footer-navigation-list--video">
-              <li class="footer-navigation-list__heading">
-                <h2 class="footer-navigation-list__title">Видеоуроки</h2>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Скринкасты</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Уроки</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Вебинары</a>
-              </li>
-            </ul>
-            <!-- /.footer-navigation-list -->
-          </div>
-          <!-- /.footer-navigation__wrapper -->
-          <div class="footer-navigation__wrapper">
-            <ul class="footer-navigation-list footer-navigation__list  footer-navigation-list--course">
-              <li class="footer-navigation-list__heading">
-                <h2 class="footer-navigation-list__title">Курсы</h2>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link"
-                  >Платные интенсивы</a
-                >
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link"
-                  >Бесплатные стримы</a
-                >
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Мастер-классы</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Менторство</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Буткемпы</a>
-              </li>
-            </ul>
-            <!-- /.footer-navigation-list -->
-  
-            <ul class="footer-navigation-list footer-navigation__list  footer-navigation-list--info">
-              <li class="footer-navigation-list__heading">
-                <h2 class="footer-navigation-list__title">Информация</h2>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link"
-                  >Политика данных</a
-                >
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Оферта сайта</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Реквизиты</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Контакты</a>
-              </li>
-            </ul>
-            <!-- /.footer-navigation-list -->
-  
-            <ul class="footer-navigation-list footer-navigation__list  footer-navigation-list--catigories">
-              <li class="footer-navigation-list__heading">
-                <h2 class="footer-navigation-list__title">Категории</h2>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Популярное</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Горячее</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Подборки</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Мнения</a>
-              </li>
-              <li class="footer-navigation-list__item">
-                <a href="#" class="footer-navigation-list__link">Карьера</a>
-              </li>
-            </ul>
-            <!-- /.footer-navigation-list -->
-          </div>
-          <!-- /.footer-navigation__wrapper -->
-          
+					<div class="footer-navigation__wrapper">
+						<ul
+							class="footer-navigation-list footer-navigation__list footer-navigation-list--news"
+						>
+							<li class="footer-navigation-list__heading">
+								<h2 class="footer-navigation-list__title">Новости</h2>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Обновления</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Экспресс</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Политика</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link"
+									>Солнечное затмение</a
+								>
+							</li>
+						</ul>
+						<!-- /.footer-navigation-list -->
 
-					
+						<ul
+							class="footer-navigation-list footer-navigation__list footer-navigation-list--articles"
+						>
+							<li class="footer-navigation-list__heading">
+								<h2 class="footer-navigation-list__title">Статьи</h2>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">HTML</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">CSS</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">JavaScript</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Web Design</a>
+							</li>
+						</ul>
+						<!-- /.footer-navigation-list -->
+
+						<ul
+							class="footer-navigation-list footer-navigation__list footer-navigation-list--video"
+						>
+							<li class="footer-navigation-list__heading">
+								<h2 class="footer-navigation-list__title">Видеоуроки</h2>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Скринкасты</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Уроки</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Вебинары</a>
+							</li>
+						</ul>
+						<!-- /.footer-navigation-list -->
+					</div>
+					<!-- /.footer-navigation__wrapper -->
+					<div class="footer-navigation__wrapper">
+						<ul
+							class="footer-navigation-list footer-navigation__list footer-navigation-list--course"
+						>
+							<li class="footer-navigation-list__heading">
+								<h2 class="footer-navigation-list__title">Курсы</h2>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link"
+									>Платные интенсивы</a
+								>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link"
+									>Бесплатные стримы</a
+								>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link"
+									>Мастер-классы</a
+								>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Менторство</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Буткемпы</a>
+							</li>
+						</ul>
+						<!-- /.footer-navigation-list -->
+
+						<ul
+							class="footer-navigation-list footer-navigation__list footer-navigation-list--info"
+						>
+							<li class="footer-navigation-list__heading">
+								<h2 class="footer-navigation-list__title">Информация</h2>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link"
+									>Политика данных</a
+								>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link"
+									>Оферта сайта</a
+								>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Реквизиты</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Контакты</a>
+							</li>
+						</ul>
+						<!-- /.footer-navigation-list -->
+
+						<ul
+							class="footer-navigation-list footer-navigation__list footer-navigation-list--catigories"
+						>
+							<li class="footer-navigation-list__heading">
+								<h2 class="footer-navigation-list__title">Категории</h2>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Популярное</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Горячее</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Подборки</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Мнения</a>
+							</li>
+							<li class="footer-navigation-list__item">
+								<a href="#" class="footer-navigation-list__link">Карьера</a>
+							</li>
+						</ul>
+						<!-- /.footer-navigation-list -->
+					</div>
+					<!-- /.footer-navigation__wrapper -->
 				</nav>
 				<!-- /.footer-navigation -->
 
 				<nav class="footer-company">
-          <div class="footer-company__wrapper">
-            <noscript class="loading-lazy">
-              <img
-                src="./assets/image/rounded-logo.svg"
-                loading="lazy"
-                alt="Логотип"
-                class="footer-company__logo"
-              />
-            </noscript>
-  
-            <ul class="footer-company-list footer-company__list">
-              <li class="footer-company-list__item">
-                <a  class="footer-company-list__link" href="#">Контакты</a>
-              </li>
-              <!-- /.footer-company-list__item -->
-              <li class="footer-company-list__item">
-                <a class="footer-company-list__link" href="#">Работа у нас</a>
-              </li>
-              <!-- /.footer-company-list__item -->
-              <li class="footer-company-list__item">
-                <a class="footer-company-list__link" href="#">Реклама</a>
-              </li>
-              <!-- /.footer-company-list__item -->
-              <li class="footer-company-list__item">
-                <a class="footer-company-list__link" href="#">Партнерство</a>
-              </li>
-              <!-- /.footer-company-list__item -->
-            </ul>
-            <!-- /.footer-company-list -->
-          </div>
+					<div class="footer-company__wrapper">
+						<noscript class="loading-lazy">
+							<img
+								src="./assets/image/rounded-logo.svg"
+								loading="lazy"
+								alt="Логотип"
+								class="footer-company__logo"
+							/>
+						</noscript>
+
+						<ul class="footer-company-list footer-company__list">
+							<li class="footer-company-list__item">
+								<a class="footer-company-list__link" href="#">Контакты</a>
+							</li>
+							<!-- /.footer-company-list__item -->
+							<li class="footer-company-list__item">
+								<a class="footer-company-list__link" href="#">Работа у нас</a>
+							</li>
+							<!-- /.footer-company-list__item -->
+							<li class="footer-company-list__item">
+								<a class="footer-company-list__link" href="#">Реклама</a>
+							</li>
+							<!-- /.footer-company-list__item -->
+							<li class="footer-company-list__item">
+								<a class="footer-company-list__link" href="#">Партнерство</a>
+							</li>
+							<!-- /.footer-company-list__item -->
+						</ul>
+						<!-- /.footer-company-list -->
+					</div>
 
 					<div class="footer-company-social-networking">
 						<a

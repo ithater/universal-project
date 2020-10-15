@@ -19,6 +19,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
     "jquery": "^3.5.1",
+    "jquery-validation": "^1.19.2",
     "loading-attribute-polyfill": "^1.5.4",
     "normalize.css": "^8.0.1",
     "swiper": "^6.3.3"
