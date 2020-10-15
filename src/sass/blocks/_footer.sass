@@ -1,0 +1,236 @@
+.footer
+  padding: 60px 0 55px
+  background-color: #fff
+  @include _992
+    padding-bottom: 40px
+  @include _576
+    padding-bottom: 34px
+  &__subscribe
+    margin-bottom: 70px
+    @include _767
+      margin-bottom: 45px
+  &-navigation
+    display: flex
+    @include _992
+      flex-wrap: wrap
+      justify-content: center
+    @include _767
+        flex-direction: column
+    &__wrapper
+      display: flex
+      @include _992
+        &:first-child
+          margin-bottom: 30px
+      @include _767
+        flex-direction: column
+        margin-bottom: 3px
+    &-list
+      width: 195px
+      list-style: none
+      margin: 0
+      padding: 0
+      border-top: 5px solid $border
+      @include _1200
+        width: 160px
+      @include _992
+        width: 195px
+      @include _767
+        width: 100%
+      &--news
+        border-color: #FF4F52
+
+      &--articles
+        border-color: #AC8EE3
+
+      &--video
+        border-color: #4592FF
+
+      &--course
+        border-color: #FFA34D
+
+      &--info
+        border-color: #3DC47E
+
+      &--catigories
+        width: 165px
+        border-color: #6E99AE
+        @include _1200
+          width: 160px
+        @include _992
+          width: 195px
+        @include _767
+          width: 100%
+      &__heading
+        margin-top: 30px
+        margin-bottom: 25px
+      &__item
+        &:not(:last-child)
+          margin-bottom: 15px
+      &__title
+        margin: 0
+        font-family: Lato
+        font-style: normal
+        font-weight: 900
+        font-size: 14px
+        line-height: 20px
+        color: $title
+      &__link
+        font-size: 14px
+        line-height: 20px
+        display: flex
+        align-items: center
+        color: #4B5157
+        text-decoration: none
+        @include smart-hover
+          transition: .2s
+          &:hover
+            color: #8d99a5
+    &__list
+      @include _767
+        &:not(:last-child)
+          margin-bottom: 30px
+  &__navigation
+    margin-bottom: 64px
+    @include _767
+      margin-bottom: 40px
+
+
+  &-company
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 30px
+    padding-bottom: 29px
+    border-top: 1px solid $border
+    border-bottom: 1px solid $border
+    @include _992
+      padding-bottom: 22px
+      flex-direction: column
+      justify-content: center
+    @include _767
+      padding: 15px 0 29px
+    &__wrapper  
+      display: flex
+      align-items: center
+      @include _992
+        margin-bottom: 10px
+      @include _767
+        flex-direction: column
+    &-list
+      display: flex
+      min-width: 463px
+      justify-content: space-between
+      list-style: none
+      margin: 0
+      padding: 0
+      @include _767
+        flex-direction: column
+        min-width: 100%
+      &__link
+        font-weight: 900
+        font-size: 14px
+        line-height: 20px
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        color: $title
+        text-decoration: none
+        transition: 0.2s
+        @include smart-hover
+          &:hover
+            opacity: 0.8
+        @include _767
+          display: block
+          text-align: center
+      &__item
+        &:not(:last-child)
+          margin-bottom: 24px
+        &:last-child
+          margin-bottom: 41px
+    &__logo
+      width: 50px
+      height: 50px
+      margin-right: 30px
+      @include _767
+        margin-right: 0
+        margin-bottom: 24px
+    &-social-networking
+      display: flex
+      justify-content: space-between
+      min-width: 205px
+      &__link
+        text-decoration: none
+      &__icon
+        width: 40px
+        height: 40px
+  &__info
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-top: 40px
+    @include _767
+      max-width: 100%
+      flex-direction: column
+      align-items: center
+  &__about
+    margin: 0
+    max-width: 750px
+    font-size: 14px
+    line-height: 20px
+    color: #939699
+    @include _992
+      max-width: 401px
+      text-align: justify
+    @include _767
+      max-width: 100%
+
+      margin-bottom: 25px
+  &__copyright
+    font-size: 14px
+    line-height: 20px    
+    text-align: right
+    color: #939699
+    @include _767
+      align-self: flex-start
+
+.subscribe
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__title
+    margin-top: 0
+    margin-bottom: 25px
+    font-family: Roboto Slab
+    font-style: normal
+    font-weight: bold
+    font-size: 40px
+    line-height: 50px
+    text-align: center
+  &-form
+    @include _767
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+
+    &__input
+      width: 313px
+      margin-right: 10px
+      padding: 10px 15px
+      background: #FFFFFF
+      border: 1px solid #D9DADB
+      border-radius: 5px
+      outline: none
+      @include _767
+        flex-basis: 100%
+        margin-bottom: 10px
+    &__button
+      padding: 10px 25px
+      background: #4592FF
+      border-radius: 20px
+      font-weight: 900
+      font-size: 14px
+      line-height: 20px
+      text-align: center
+      color: #FFFFFF
+      @include bonone
+      &::placeholder
+        color: #939699
