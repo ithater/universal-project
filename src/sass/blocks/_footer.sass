@@ -208,25 +208,29 @@
     @include _576
       font-size: 36px
   &-form
-    
     display: flex
     flex-wrap: wrap
     justify-content: center
+    @include _767
+      flex-direction: column
+      width: 100%
     &__holder
       position: relative
-
-    &__input
-      width: 313px
       margin-right: 10px
+      width: 313px
+      @include _767
+        width: 100%
+        margin-bottom: 10px
+        margin-right: 0
+    &__input
+      width: 100%
       padding: 10px 15px
       background: #FFFFFF
       border: 1px solid #D9DADB
       border-radius: 5px
       outline: none
-      @include _767
-        width: 100%
-        margin-bottom: 10px
-        margin-right: 0
+
+
     &__button
       padding: 10px 25px
       background: #4592FF
@@ -236,6 +240,10 @@
       line-height: 20px
       text-align: center
       color: #FFFFFF
+      align-self: flex-start
       @include bonone
+      @include _767
+        align-self: center
+        
       &::placeholder
         color: #939699

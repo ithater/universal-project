@@ -8,7 +8,6 @@ require 'PHPMailer/Exception.php';
 $email = $_POST['email'];
 
 
-$body = '';
 // Формирование самого письма
 $title = "Запрос на подписку Universal";
 

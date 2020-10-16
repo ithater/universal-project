@@ -85,7 +85,7 @@ module.exports = {
 	optimization: optimization(),
 	devServer: {
 		port: 5500,
-		host: '192.168.0.10',
+		host: '192.168.0.13',
 		// hot: isDev,
 		inline: isDev,
 		publicPath: '',

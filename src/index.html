@@ -1749,15 +1749,16 @@
 			<div class="container">
 				<div class="subscribe footer__subscribe">
 					<h2 class="subscribe__title">Подпишитесь на нашу рассылку</h2>
-					<form class="subscribe-form subscribe__form" id="subscribe-form">
+					<form method="post" class="subscribe-form subscribe__form" novalidate id="subscribe-form">
 						<div class="subscribe-form__holder">
 							<input
 								type="email"
-                placeholder="Email"]
-                name="email"
+								placeholder="Email"
+								name="email"
 								class="subscribe-form__input"
-								required
-              />
+                required
+                id="subscribe-email"
+							/>
 						</div>
 						<button type="submit" class="subscribe-form__button">
 							Подписаться
@@ -1918,14 +1919,15 @@
 
 				<nav class="footer-company">
 					<div class="footer-company__wrapper">
-						<noscript class="loading-lazy">
-							<img
-								src="./assets/image/rounded-logo.svg"
-								loading="lazy"
-								alt="Логотип"
-								class="footer-company__logo"
-							/>
-						</noscript>
+						<a href="#">
+							<noscript class="loading-lazy">
+								<img
+									src="./assets/image/rounded-logo.svg"
+									loading="lazy"
+									alt="Логотип"
+									class="footer-company__logo"
+								/> </noscript
+						></a>
 
 						<ul class="footer-company-list footer-company__list">
 							<li class="footer-company-list__item">
