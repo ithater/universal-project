@@ -92,14 +92,14 @@ button
   border-radius: 10px
   text-decoration: none
   overflow: hidden
+  @include smart-hover
+    transition: .4s
+    will-change: transform
+    &:hover
+      box-shadow: 0 0 10px rgba(0,0,0,0.05)
+      transform: scale(1.04)
   &-text
     text-decoration: none
-    @include smart-hover
-      &:hover
-        .article-card-text__title
-          color: #585555
-        .article-card-text__about,
-          color: #818181
     &__title
       margin-top: 0
       margin-bottom: 5px

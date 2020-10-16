@@ -1,5 +1,5 @@
 .offered-articles
-  padding: 60px 0
+  padding: 60px 0 55px
   &__wrapper
     display: flex
     justify-content: space-between
@@ -10,7 +10,7 @@
   &-main
     flex-shrink: 0
     flex-basis: 848px
-    padding: 0 25px
+    padding: 25px
     border-radius: 10px
     background-color: #fff
     @include _1200
@@ -20,25 +20,40 @@
       width: 100%
       padding-right: 14px
     @include _767
-      padding: 0
+      padding: 25px 0 25px
+    &__line
+      margin-top: 25px
+      margin-bottom: 25px
+      background-color: $border
+      border: none
+      height: 1px
+      @include _767
+        margin-top: 23px
+        margin-bottom: 29px
     &-card
       position: relative
-      display: flex
-      padding: 25px 0
-      @include _767
-        flex-direction: column
-        padding: 23px 0 29px
-      &:not(:last-child)
-        border-bottom: 1px solid $border
+      &__link
+        display: flex
+        
+        text-decoration: none
+        @include _767
+          flex-direction: column
+        @include smart-hover
+          &:hover
+            .offered-articles-main-card__title
+              color: #585555
+            .offered-articles-main-card__about
+              color: #818181
+      
       &__bookmark
         position: absolute
-        top: 25px
+        top: 0px
         right: 0px
         cursor: pointer
         fill: #BCBFC2
         transition: .5s
         @include _767
-          top: 8px
+          top: -11px
           right: 8px
 
         &--active
@@ -87,14 +102,6 @@
           display: none
           @include _767
             display: block
-      &__link
-        text-decoration: none
-        @include smart-hover
-          &:hover
-            .offered-articles-main-card__title
-              color: #585555
-            .offered-articles-main-card__about
-              color: #818181
       &__title
         margin-top: 15px
         margin-bottom: 10px
@@ -127,6 +134,7 @@
         margin-bottom: 5px
         @include _767
           margin-top: 20px
+
 
   &__main
     @include _992
@@ -171,12 +179,15 @@
       @include _576
         justify-content: space-evenly
 
+    &__card
+      padding-top: 17px
+      margin-bottom: 17px
     &-card
       display: flex
       width: 213px
-      padding: 17px 0
-      &:not(:last-child)
-        border-bottom: 1px solid $border
+      text-decoration: none
+      &:not(:first-child)
+        border-top: 1px solid $border
       &__image
         width: 60px
         height: 60px

@@ -162,6 +162,12 @@
       &__icon
         width: 40px
         height: 40px
+        @include smart-hover
+          transition: .4s
+          will-change: transform
+          &:hover
+            box-shadow: 0 0 10px rgba(0,0,0,0.05)
+            transform: scale(1.05)
   &__info
     display: flex
     justify-content: space-between
