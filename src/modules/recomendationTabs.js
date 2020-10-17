@@ -6,7 +6,6 @@ const recomendationTabs = () => {
 	trigers.on('click', function(evt) {
 		evt.preventDefault();
 		const target = $(this).attr('data-target');
-		console.log(target);
 		contents.removeClass('recommended-tabs-content__item--visible');
 		$(target).addClass('recommended-tabs-content__item--visible');
 	});

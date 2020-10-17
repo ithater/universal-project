@@ -23,7 +23,6 @@ export default class Validation {
 
 		this.errElem = errElem;
 		this.onInput = false;
-		console.log(this.form);
 		this.init();
 	}
 
@@ -64,7 +63,6 @@ export default class Validation {
 	init() {
 		this.form.addEventListener('submit', evt => {
 			evt.preventDefault();
-			console.log('validation');
 			const value = this.emailInput.value;
 			const display = this.display;
 			this.valid = this.validateEmail(value);

@@ -12,6 +12,9 @@ import recomendationTabs from '@modules/recomendationTabs';
 import sliderMain from '@modules/sliderMain';
 import addBookmark from '@modules/addBookmark';
 import subscription from '@modules/subscription';
+import formModal from '@modules/formModal';
+import resultModal from '@modules/resultModal';
+import toUp from '@modules/toUp';
 
 
 
@@ -21,4 +24,7 @@ recomendationTabs();
 sliderMain();
 addBookmark();
 subscription();
+formModal();
+resultModal();
+toUp();
 

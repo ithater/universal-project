@@ -540,7 +540,7 @@
 									</span>
 								</div>
 							</div>
-							<div href="#" class="mosaic-articles-dream-job-comments">
+&							<div class="mosaic-articles-dream-job-comments">
 								<noscript class="loading-lazy">
 									<img
 										class="mosaic-articles-dream-job-comments__icon"
@@ -573,10 +573,10 @@
 								<span class="mosaic-articles-popular-text__rubric"
 									>Web design</span
 								>
-								<span href="#" class="mosaic-articles-popular-text__link"
+								<div class="mosaic-articles-popular-text__link"
 									><h2 class="mosaic-articles-popular-text__title">
 										Где взять реальные проекты для портфолио
-									</h2></span
+									</h2></div
 								>
 							</div>
 							<!-- /.mosaic-articles-popular-text -->
@@ -832,11 +832,11 @@
 							/>
 						</noscript>
 						<div class="mosaic-articles-tools__wrapper">
-							<span class="mosaic-articles-tools__link">
+							<div class="mosaic-articles-tools__link">
 								<h2 class="mosaic-articles-tools__title">
 									20+ инструментов для&nbsp;js&#8209;разработчика
 								</h2>
-							</span>
+							</div>
 						</div>
 					</a>
 				</div>
@@ -904,7 +904,7 @@
 									>
 										Новости
 									</span>
-									<div class="offered-articles-main-card__info" href="#">
+									<div class="offered-articles-main-card__info" >
 										<h2 class="offered-articles-main-card__title">
 											Новый налоговый&nbsp;режим для фрилансеров — налог на
 											проф. доход
@@ -921,7 +921,7 @@
 										class="control-panel offered-articles-main-card__control-panel"
 									>
 										<span class="control-panel__date">6 августа</span>
-										<div href="#" class="control-panel-comments">
+										<div class="control-panel-comments">
 											<noscript class="loading-lazy">
 												<img
 													class="control-panel-comments__icon"
@@ -933,7 +933,7 @@
 											<span class="control-panel-comments__counter"> 342 </span>
 										</div>
 										<!-- /.control-panel-comments -->
-										<div href="#" class="control-panel-likes">
+										<div  class="control-panel-likes">
 											<noscript class="loading-lazy">
 												<img
 													src="./assets/image/heart-icon.svg"
@@ -998,7 +998,7 @@
 										class="control-panel offered-articles-main-card__control-panel"
 									>
 										<span class="control-panel__date">7 октября</span>
-										<div href="#" class="control-panel-comments">
+										<div  class="control-panel-comments">
 											<noscript class="loading-lazy">
 												<img
 													class="control-panel-comments__icon"
@@ -1010,7 +1010,7 @@
 											<span class="control-panel-comments__counter"> 27 </span>
 										</div>
 										<!-- /.control-panel-comments -->
-										<div href="#" class="control-panel-likes">
+										<div class="control-panel-likes">
 											<noscript class="loading-lazy">
 												<img
 													src="./assets/image/heart-icon.svg"
@@ -1217,7 +1217,7 @@
 									>
 										Горячее
 									</span>
-									<div class="offered-articles-main-card__info" href="#">
+									<div class="offered-articles-main-card__info">
 										<h2 class="offered-articles-main-card__title">
 											Список стран, куда можно улететь
 										</h2>
@@ -1233,7 +1233,7 @@
 										class="control-panel offered-articles-main-card__control-panel"
 									>
 										<span class="control-panel__date">22 октября</span>
-										<div href="#" class="control-panel-comments">
+										<div class="control-panel-comments">
 											<noscript class="loading-lazy">
 												<img
 													class="control-panel-comments__icon"
@@ -1295,7 +1295,7 @@
 									>
 										Подборки
 									</span>
-									<div class="offered-articles-main-card__info" href="#">
+									<div class="offered-articles-main-card__info">
 										<h2 class="offered-articles-main-card__title">
 											Список Youtube каналов для тех, кто только начинает
 											изучать разработку
@@ -1381,7 +1381,7 @@
 											loading="lazy"
 										/>
 									</noscript>
-								</в>
+								</div>
 								<!-- /.offered-articles-last-card__text -->
               </a>
 							<!-- /.offered-articles-last-card -->
@@ -1647,7 +1647,7 @@
 
 						<!-- /.article-cards-slider-pagination -->
 						<div
-							class="article-cards-slider-slide-content article-cards-slider-slide__content"
+							class="article-cards-slider-slide-content article-cards-slider__content"
 						>
 							<span class="article-cards-slider-slide-content__hot"
 								>Горячее</span
@@ -1720,7 +1720,7 @@
 								</span>
 							</div>
 							<!-- /.article-cards-career-text -->
-							<button class="button-arrow article-cards-career-text__button">
+							<button class="button-arrow article-cards-career__button">
 								<span class="button-arrow__read">Читать далее</span>
 								<noscript class="loading-lazy">
 									<img
@@ -2054,6 +2054,64 @@
 			</div>
 			<!-- ./container -->
 		</footer>
-		<!-- /.footer -->
+    <!-- /.footer -->
+    
+    <section class="modal-subscribe">
+      <div class="modal-subscribe__overlay"></div>
+      <!-- /.modal-subscribe__overlay -->
+
+      <div class="modal-subscribe__dialog">
+        <button class="modal-subscribe__close"></button>
+        <div class="subscribe">
+					<h2 class="subscribe__title">Подпишитесь <br /> на нашу рассылку</h2>
+					<form
+						method="post"
+						class="subscribe-form subscribe__form"
+						novalidate
+						id="modal-subscribe-form"
+					>
+						<div class="subscribe-form__holder modal-subscribe__holder">
+							<input
+								type="email"
+								placeholder="Email"
+								name="email"
+								class="subscribe-form__input "
+								required
+								id="modal-subscribe-email"
+							/>
+						</div>
+						<button type="submit" class="subscribe-form__button">
+							Подписаться
+						</button>
+					</form>
+					<!-- ./subscribe-form -->
+				</div>
+				<!-- /.subscribe -->
+      </div>
+      <!-- ./modal-subscribe__dialog -->
+    </section>
+    <!-- /.modal-subscribe -->
+
+    
+    <div class="modal-result">
+      <div class="modal-result__overlay"></div>
+      <!-- /.modal-subscribe__overlay -->
+
+      <div class="modal-result__dialog">
+        <button class="modal-result__close"></button>
+        <h2 class="modal-result__title">Спасибо за то, что доверяете нам...</h2>
+        <span class="modal-result__text">Скоро вам придет 1 рассылка.</span>
+      </div>
+      <!-- ./modal-subscribe__dialog -->
+    </div>
+
+    <a href="#" class="to-up">
+      <span class="to-up__text">наверх</span>
+      <noscript class="loading-lazy">
+        <img class="to-up__image" loading="lazy" src="./assets/image/arrow-right-to-up.svg" alt="наверх" />
+      </noscript>
+    </a>
+
+
 	</body>
 </html>
