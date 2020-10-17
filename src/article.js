@@ -12,6 +12,7 @@ import formModal from '@modules/formModal';
 import resultModal from '@modules/resultModal';
 import toUp from '@modules/toUp';
 import addBookmark from '@modules/addBookmark';
+import sliderArticle from '@modules/sliderArticle';
 
 
 menuMain();
@@ -20,4 +21,5 @@ formModal();
 resultModal();
 toUp();
 addBookmark();
+sliderArticle();
 

@@ -1,0 +1,72 @@
+.article-slider
+  padding-top: 15px
+  padding-bottom: 45px
+  &__wrapper
+    background-color: #fff
+    border-radius: 10px
+    border: 1px solid $border
+    overflow: hidden
+
+  &__container
+    position: relative
+    z-index: 10
+    width: 100%
+    height: 555px
+    overflow: hidden
+  
+  &-button
+    position: absolute
+    z-index: 20
+    cursor: pointer
+    top: 50%
+    transform: translateY(-50%)
+    
+    &__icon
+      width: 60px
+      height: 60px
+    &--prev
+      left: 35px
+    &--next
+      right: 35px
+
+  &-slide
+  &__image
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+
+  &-info
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-left: 35px
+    border-top: 1px solid $border
+    &__text
+      font-size: 14px
+      line-height: 20px
+      color: #4B5157
+    &-author
+      display: flex
+      padding: 12px 35px 13px 30px
+      border-left: 1px solid $border
+      height: 100%
+      &__avatar
+        margin-right: 10px
+        width: 45px
+        height: 45px
+        object-fit: cover
+        border-radius: 50%
+
+      &__holder
+        display: flex
+        flex-direction: column
+      &__name
+        font-size: 14px
+        line-height: 20px
+        color: #4B5157
+        margin-bottom: 2px
+      &__job
+        font-size: 12px
+        line-height: 15px
+        color: #939699
