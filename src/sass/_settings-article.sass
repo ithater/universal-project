@@ -1,0 +1,56 @@
+*
+  box-sizing: border-box
+body
+  font-family: Lato, sans-serif
+  font-weight: normal
+  font-style: normal
+  background-color: #fff
+  @include _767
+    padding-top: 75px
+.container
+  max-width: 1140px
+  margin: auto
+  @include _1200
+    max-width: 960px
+  @include _992
+    max-width: 700px
+  @include _767
+    max-width: 90%
+  @include _576
+    max-width: 87.5%
+img
+  width: 100%
+button
+  cursor: pointer
+label.invalid
+  position: absolute
+  left: 3px
+  top: calc(100% + 3px)
+  color: #FF4F52
+  font-size: 14px
+  @include _767
+    top: unset
+    bottom: calc(100% + 3px)
+.bookmark
+  fill: #BCBFC2
+  cursor: pointer
+  transition: .5s
+  &--active
+    fill: #FF4F52
+.text-container
+  max-width: 620px
+  margin-left: 97px
+  @include _1200
+    margin-left: 5px
+  @include _767
+    margin-left: 0
+    max-width: 100%
+
+.paragraph-text
+  margin-top: 0
+  margin-bottom: 30px
+  font-size: 18px
+  line-height: 30px
+  color: #4B5157
+  @include _576
+    font-size: 16px

@@ -1,0 +1,40 @@
+.article-foreword
+  padding-top: 45px
+  @include _767
+    padding-top: 164px
+  &__float
+    &:first-letter
+      font-weight: 800
+      font-size: 100px
+      line-height: 75px
+      color: $blue
+      float: left
+      margin-top: 15px
+
+      margin-left: -7px
+      margin-right: 10px
+      @include _992
+        font-size: 191px
+        margin-top: 50px
+        margin-right: 0
+        margin-left: -10px
+      @include _576
+        font-size: 100px
+        margin-top: 15px
+        margin-right: 10px
+        margin-left: 0
+
+  &__text
+    &:first-child
+      margin-top: 15px
+      margin-bottom: 0
+      @include _992
+        width: 486px
+      @include _767
+        width: 100%
+      
+    &:nth-child(2)
+      margin-top: 0
+      margin-bottom: 15px
+      @include _576
+        margin-top: 15px

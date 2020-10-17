@@ -1,9 +1,9 @@
 import * as $ from 'jquery';
 
 const addBookmark = () => {
-	const bookmark = $('.offered-articles-main-card__bookmark');
+	const bookmark = $('.bookmark');
 	bookmark.on('click', function() {
-		$(this).toggleClass('offered-articles-main-card__bookmark--active');
+		$(this).toggleClass('bookmark--active');
 	});
 };
 

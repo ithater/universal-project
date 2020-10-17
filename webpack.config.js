@@ -69,7 +69,8 @@ const PATHS = {
 module.exports = {
 	mode: 'development',
 	entry: {
-		main: ['@babel/polyfill', './src/index.js'],
+    main: ['@babel/polyfill', './src/index.js'],
+    article: ['@babel/polyfill', './src/article.js'],
 	},
 	output: {
 		filename: `js/${filename('js')}`,
@@ -96,8 +97,17 @@ module.exports = {
 			template: `${PATHS.src}/index.html`,
 			minify: {
 				collapseWhitespace: isProd
-			},
+      },
+      filename: 'index.html',
 			chunks: ['main'],
+		}),
+		new HTMLWebpackPlugin({
+			template: `${PATHS.src}/article.html`,
+			minify: {
+				collapseWhitespace: isProd
+      },
+      filename: 'article.html',
+			chunks: ['article'],
 		}),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
