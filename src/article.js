@@ -5,7 +5,6 @@ import 'loading-attribute-polyfill';
 import 'normalize.css';
 import './sass/article.sass';
 
-
 import menuMain from '@modules/menuMain';
 import subscription from '@modules/subscription';
 import formModal from '@modules/formModal';

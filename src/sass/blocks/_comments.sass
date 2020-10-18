@@ -1,0 +1,277 @@
+.comments
+  &__container
+    display: flex
+    flex-direction: column
+    max-width: 750px
+    margin-left: 97px
+    padding-top: 90px
+    padding-bottom: 30px
+    @include _992
+      margin-left: 0
+    &--pt-30
+      padding-top: 30px
+  &__info
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 29px
+    @include _576
+      flex-wrap: wrap
+  &__title
+    margin: 0 10px 0 0
+    font-family: Roboto Slab
+    font-style: normal
+    font-weight: bold
+    font-size: 40px
+    line-height: 50px
+    color: $title
+    @include _767
+      font-size: 28px
+
+  &__count
+    display: inline-block
+    font-size: 40px
+    line-height: 50px
+    color: #939699
+    margin-right: auto
+    @include _767
+      font-size: 32px
+    @include _576
+      font-size: 28px
+  &__button
+    position: relative
+    z-index: 5
+    display: flex
+    align-items: center
+    background-color: transparent
+    border: 1px solid $border
+    border-radius: 20px
+    outline: none
+    padding: 10px 20px
+    overflow: hidden
+    @include _576
+      margin-top: 10px
+    &::before
+      content: ''
+      z-index: -1
+      background-color: rgba(0, 0, 0, 0)
+      transition: 0.35s
+      @include absolute-full
+    @include smart-hover
+      &:hover
+        &::before
+          background-color: rgba(0, 0, 0, 0.04)
+  &__icon
+    width: 20px
+    height: 20px
+    margin-right: 10px
+  &__text
+    font-weight: 900
+    font-size: 14px
+    line-height: 20px
+    color: $title
+
+  &-comment
+    &-card
+      display: flex
+      border-top: 1px solid $border
+      padding-top: 25px
+      &--replay
+        padding-left: 90px
+        @include _992
+          padding-left: 50px
+        @include _576
+          padding-left: 20px
+      &__avatar
+        width: 75px
+        height: 75px
+        margin-right: 15px
+        border-radius: 50%
+        object-fit: cover
+        @include _576
+          width: 45px
+          height: 45px
+      &__info
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+      &__name
+        margin-right: 10px
+        font-family: Roboto Slab
+        font-style: normal
+        font-weight: bold
+        font-size: 16px
+        line-height: 25px
+        color: #262D33
+        @include _576
+          font-size: 12px
+      &__date
+        font-size: 12px
+        line-height: 15px
+        color: #939699
+        @include _576
+          font-size: 10px
+
+      &__text
+        margin-top: 0
+        margin-bottom: 15px
+        max-width: 570px
+        font-size: 18px
+        line-height: 30px
+        color: $text
+        cursor: pointer
+        @include _576
+          font-size: 16px
+      &__panel
+        display: flex
+        align-items: center
+      &__replay-icon
+        width: 15px
+        height: 15px
+        margin-right: 5px
+        cursor: pointer
+
+      &__replay-text
+        font-size: 12px
+        line-height: 15px
+        color: #262D33
+        margin-right: 15px
+        cursor: pointer
+
+      &__like
+        width: 15px
+        height: 15px
+        margin-right: 10px
+        cursor: pointer
+
+      &__like-counter
+        font-weight: 800
+        font-size: 12px
+        line-height: 15px
+        color: #939699
+        &--positive
+          color: #3DC47E
+        &--negative
+          color: #FF4F52
+      &__dislike
+        margin-left: 10px
+        width: 15px
+        height: 15px
+        cursor: pointer
+
+  &__comment-card
+    margin-bottom: 29px
+
+  &-download-more
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 20px
+    width: 100%
+    padding: 10px 20px
+    background-color: transparent
+    outline: none
+    border: 1px solid $border
+    overflow: hidden
+    &::before
+      content: ''
+      z-index: -1
+      background-color: rgba(0, 0, 0, 0)
+      transition: 0.35s
+      @include absolute-full
+    @include smart-hover
+      &:hover
+        &::before
+          background-color: rgba(0, 0, 0, 0.04)
+    &__icon
+      width: 15px
+      height: 15px
+      margin-right: 7px
+    &__text
+      font-weight: 900
+      font-size: 14px
+      line-height: 20px
+      color: #262D33
+
+  &-add-comment
+    display: flex
+    padding: 30px 40px 35px 30px
+    background: #F5F5F5
+    border-radius: 10px
+    @include _576
+      position: relative
+      flex-wrap: wrap
+      padding: 30px 10px 35px
+    &__avatar
+      width: 75px
+      height: 75px
+      object-fit: cover
+      border-radius: 50px
+      margin-right: 21px
+      margin-top: 35px
+      @include _576
+        position: absolute
+        top: 56px
+        left: 16px
+        width: 35px
+        height: 35px
+    &__wrapper
+      display: flex
+      flex-direction: column
+      flex-grow: 1
+    &__title
+      margin-top: 0
+      margin-bottom: 15px
+      font-family: Roboto Slab
+      font-style: normal
+      font-weight: bold
+      font-size: 20px
+      line-height: 25px
+      color: $title
+      @include _576
+        font-size: 17px
+    &__message
+      width: 100%
+      height: 130px
+      padding: 8px
+      background: #FFFFFF
+      box-sizing: border-box
+      border: 1px solid $border
+      resize: none
+      outline: none
+      border-radius: 10px
+      @include _576
+        display: block
+        width: calc(100% - 60px)
+        margin-left: auto
+
+    &__holder
+      position: relative
+      z-index: 5
+      margin-bottom: 15px
+      &::before
+        content: ''
+        position: absolute
+        z-index: 10
+        top: 27px
+        right: calc( 100% - 1px )
+        border: 12px solid transparent
+        border-right-color: #FFFFFF
+        @include _576
+          right: calc( 100% - 1px - 61px)
+      &::after
+        content: ''
+        position: absolute
+        z-index: 9
+        top: 26px
+        right: 100%
+        border: 13px solid transparent
+        border-right-color: $border
+        @include _576
+          right: calc( 100% - 62px)
+
+    &__button
+      align-self: flex-start
+      @include _576
+        margin-left: 68px
