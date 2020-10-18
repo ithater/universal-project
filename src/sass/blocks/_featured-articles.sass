@@ -1,0 +1,58 @@
+.featured-articles
+  background-color: #F5F5F5
+  padding-top: 60px
+  padding-bottom: 90px
+  @include _992
+    padding-bottom: 40px
+  &__wrapper
+    display: flex
+    @include _992
+      flex-direction: column
+  &__holder
+    display: flex
+
+    @include _767
+      flex-direction: column
+    &:first-child
+      margin-right: 29px
+      @include _992
+        margin-right: 0
+        margin-bottom: 29px
+
+  &__card
+    width: 263px
+    text-decoration: none
+    @include _1200
+      width: 217px
+    @include _992
+      width: 335px
+    @include _767
+      width: 100%
+    &:first-child
+      margin-right: 29px
+      @include _767
+        margin-right: 0
+        margin-bottom: 29px
+    @include smart-hover
+      will-change: transform
+      // transform: translate3d(0,0,0)
+      transition: .4s
+      &:hover
+        transform: scale(1.01)
+  &__image
+    margin-top: 0
+    margin-bottom: 15px
+    height: 180px
+    border-radius: 10px
+    object-fit: cover
+
+  &__title
+    width: 263px
+    margin-top: 0
+    margin-bottom: 15px
+    font-family: Roboto Slab
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 25px
+    color: $title
