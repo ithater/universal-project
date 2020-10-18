@@ -1,0 +1,24 @@
+.article-conclusion
+  padding-top: 50px
+  &__holder
+    position: relative
+  &__quote
+    position: absolute
+    z-index: -5
+    left: -20px
+    top: -20px
+    width: 70px
+    height: 70px
+
+  &__title
+    margin-top: 0
+    margin-bottom: 45px
+    font-family: Roboto Slab
+    font-style: normal
+    font-weight: bold
+    font-size: 25px
+    line-height: 30px
+    letter-spacing: 0.2px
+    color: $title
+    @include _767
+      font-size: 20px
