@@ -1,5 +1,5 @@
 .article-slider
-  padding-top: 15px
+  padding-top: 28px
   padding-bottom: 45px
   &__wrapper
     background-color: #fff
@@ -13,6 +13,8 @@
     width: 100%
     height: 555px
     overflow: hidden
+    @include _767
+      height: 257px
   
   &-button
     position: absolute
@@ -20,14 +22,26 @@
     cursor: pointer
     top: 50%
     transform: translateY(-50%)
-    
+    background-color: transparent
+    padding: 0
+    margin: 0
+    @include bonone
+
     &__icon
       width: 60px
       height: 60px
+      @include _767
+        width: 34px
+        height: 34px
     &--prev
       left: 35px
+      @include _767
+        left: 25px
+      
     &--next
       right: 35px
+      @include _767
+        right: 12px
 
   &-slide
   &__image
@@ -40,17 +54,34 @@
     display: flex
     justify-content: space-between
     align-items: center
-    padding-left: 35px
+    padding-left: 20px
     border-top: 1px solid $border
+    @include _767
+      flex-direction: column
+      align-items: flex-start
+      padding-left: 0
     &__text
       font-size: 14px
       line-height: 20px
       color: #4B5157
+      padding-top: 9px
+      padding-bottom: 9px
+      @include _992 
+        max-width: 354px
+      @include _767
+      padding-left: 14px
     &-author
       display: flex
-      padding: 12px 35px 13px 30px
+      align-items: center
+      padding: 12px 10px 13px 30px
       border-left: 1px solid $border
+      min-width: 262px
       height: 100%
+      @include _767
+        border-left: none
+        border-top: 1px solid $border
+        width: 100%
+        padding: 9px 15px
       &__avatar
         margin-right: 10px
         width: 45px
