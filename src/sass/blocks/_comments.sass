@@ -119,7 +119,7 @@
         font-size: 18px
         line-height: 30px
         color: $text
-        cursor: pointer
+        overflow: hidden
         @include _576
           font-size: 16px
       &__panel
@@ -137,27 +137,44 @@
         color: #262D33
         margin-right: 15px
         cursor: pointer
+      &__rating-button
+        padding: 0
+        margin: 0
+        border: none
+        outline: none
+        background-color: transparent
+        margin-right: 10px
+        &:last-child
+          margin-left: 10px
 
       &__like
         width: 15px
         height: 15px
-        margin-right: 10px
         cursor: pointer
+        fill: #BCBFC2
+        transition: .2s
+        &--active
+          fill: #3DC47E
 
       &__like-counter
         font-weight: 800
         font-size: 12px
         line-height: 15px
         color: #939699
+        transition: .2s
         &--positive
           color: #3DC47E
         &--negative
           color: #FF4F52
       &__dislike
-        margin-left: 10px
         width: 15px
         height: 15px
         cursor: pointer
+        fill: #BCBFC2
+        transition: .2s
+
+        &--active
+          fill: #FF4F52
 
   &__comment-card
     margin-bottom: 29px

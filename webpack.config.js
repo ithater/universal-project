@@ -120,10 +120,10 @@ module.exports = {
 					from: `${PATHS.src}/${PATHS.assets}/php`,
 					to: `${PATHS.dist}/${PATHS.assets}/php`,
 				},
-				// {
-				//   from: `${PATHS.src}/${PATHS.assets}/fonts`,
-				//   to: `${PATHS.dist}/${PATHS.assets}/fonts`,
-				// },
+				{
+				  from: `${PATHS.src}/${PATHS.assets}/db-comments.json`,
+				  to: `${PATHS.dist}/${PATHS.assets}/db-comments.json`,
+				},
 			],
 		}),
 		new MiniCssExtractPlugin({

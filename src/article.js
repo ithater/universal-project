@@ -12,6 +12,10 @@ import resultModal from '@modules/resultModal';
 import toUp from '@modules/toUp';
 import addBookmark from '@modules/addBookmark';
 import sliderArticle from '@modules/sliderArticle';
+import downloadComments from '@modules/downloadComments';
+import addComment from '@modules/addComment';
+import toggleCommentLikes from '@modules/toggleCommentLikes';
+import moveToAddCommentForm from '@modules/moveToAddCommentForm';
 
 
 menuMain();
@@ -21,4 +25,8 @@ resultModal();
 toUp();
 addBookmark();
 sliderArticle();
+downloadComments();
+addComment();
+toggleCommentLikes();
+moveToAddCommentForm();
 

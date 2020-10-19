@@ -6,7 +6,9 @@ const resultModal = () => {
 	const overlay = $('.modal-result__overlay');
 
 	const close = () => modal.removeClass('modal-result--visible');
-
+	window.addEventListener('keydown', evt => {
+		if (evt.key === 'Escape') close();
+	});
 	closeBtn.on('click', close);
 	overlay.on('click', close);
 };
