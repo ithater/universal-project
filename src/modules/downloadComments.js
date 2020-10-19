@@ -82,7 +82,7 @@ const downloadComments = () => {
 
 	downloadBtn.addEventListener('click', async () => {
 		if (dbData === 'no data') {
-			const data = await fetch('../assets/db-comments.json');
+			const data = await fetch('./assets/db-comments.json');
 			dbData = await data.json();
 			render();
 		} else render();
