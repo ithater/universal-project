@@ -8,7 +8,6 @@
     padding-top: 30px
     width: 653px
     border-top: 1px solid $border
-
     
   &__title
     margin-top: 0
@@ -26,15 +25,16 @@
     display: flex
     
     @include _576
-      flex-direction: column
-      margin-left: 78px
+      flex-wrap: wrap
+      // flex-direction: column
+      // margin-left: 78px
   &__link
     text-decoration: none
     &:not(:last-child)
       margin-right: 14px
     @include _576
       &:not(:last-child)
-        margin-right: 0
+        margin-right: 7px
         margin-bottom: 14px
   &__button
     position: relative

@@ -16,6 +16,11 @@
   background-color: #f5f5f5
   text-decoration: none
   color: #000
+  
+  @include smart-hover
+    transition: .5s
+    &:hover
+      border-color: $title
   @media ( max-width: 1400px  )
     right: -15px
     

@@ -18,10 +18,12 @@ const subscription = () => {
 				require: 'Данное поле должно быть заполнено',
 				email: 'Введите корректный email'
 			}
-		}
+		},
+		type: 'email'
 	});
 
 	const modalFormValidation = new Validation({
+		type: 'email',
 		form: '#modal-subscribe-form',
 		email: {
 			id: 'modal-subscribe-email'

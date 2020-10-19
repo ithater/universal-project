@@ -238,6 +238,8 @@
 
 
     &__button
+      position: relative
+      z-index: 1
       padding: 10px 25px
       background: #4592FF
       border-radius: 20px
@@ -247,9 +249,21 @@
       text-align: center
       color: #FFFFFF
       align-self: flex-start
+      overflow: hidden
       @include bonone
+      &::before
+        content: ''
+        z-index: -1
+        background-color: rgba(0, 0, 0, 0)
+        transition: 0.35s
+        @include absolute-full
+      @include smart-hover
+        &:hover
+          &::before
+            background-color: rgba(0, 0, 0, 0.09)
       @include _767
         align-self: center
+    
         
       &::placeholder
         color: #939699

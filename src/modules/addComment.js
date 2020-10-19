@@ -1,13 +1,31 @@
+import Validation from '@modules/Validation';
+
 const addComment = () => {
 	const from = document.getElementById('add-comment');
 	const messageArea = document.getElementById('message');
 
+	const сommentValidation = new Validation({
+		form: '#add-comment',
+		message: {
+			id: 'message'
+		},
+		error: {
+			className: 'invalid-message',
+			message: {
+				require: 'Данное поле должно быть заполнено',
+				length: 'Введите минимум 100 символов'
+			}
+		},
+		type: 'message'
+	});
 
 
 
 	const addComment = evt => {
 		evt.preventDefault();
-		if (messageArea.value.trim() < 100) return;
+
+		if (!сommentValidation.valide) return;
+
 		const { date, name, message, image  } = {
 			date() {
 				const dateObj = new Date();

@@ -75,7 +75,7 @@
     &-card
       display: flex
       border-top: 1px solid $border
-      padding-top: 25px
+      padding-top: 20px
       &--replay
         padding-left: 90px
         @include _992
@@ -177,16 +177,16 @@
           fill: #FF4F52
 
   &__comment-card
-    margin-bottom: 29px
+    margin-bottom: 25px
 
   &-download-more
     position: relative
     display: flex
     align-items: center
     justify-content: center
-    border-radius: 20px
+    border-radius: 25px
     width: 100%
-    padding: 10px 20px
+    padding: 15px 20px
     background-color: transparent
     outline: none
     border: 1px solid $border
@@ -205,6 +205,9 @@
       width: 15px
       height: 15px
       margin-right: 7px
+      margin-left: 27px
+      @include _1200
+        margin-left: 0
     &__text
       font-weight: 900
       font-size: 14px
@@ -219,7 +222,7 @@
     @include _576
       position: relative
       flex-wrap: wrap
-      padding: 30px 10px 35px
+      padding: 30px 8px 35px
     &__avatar
       width: 75px
       height: 75px
@@ -246,7 +249,9 @@
       font-size: 20px
       line-height: 25px
       color: $title
+      letter-spacing: 0.26px
       @include _576
+        margin-bottom: 17px
         font-size: 17px
     &__message
       width: 100%
@@ -266,7 +271,7 @@
     &__holder
       position: relative
       z-index: 5
-      margin-bottom: 15px
+      margin-bottom: 10px
       &::before
         content: ''
         position: absolute
@@ -290,5 +295,16 @@
 
     &__button
       align-self: flex-start
+      margin-left: 5px
+      &::before
+        content: ''
+        z-index: -1
+        background-color: rgba(0, 0, 0, 0)
+        transition: 0.35s
+        @include absolute-full
+      @include smart-hover
+        &:hover
+          &::before
+            background-color: rgba(0, 0, 0, 0.09)
       @include _576
         margin-left: 68px

@@ -20,9 +20,32 @@
     height: 25px
     display: flex
     background-color: transparent
-    background: url('../assets/image/close-img.svg') no-repeat center
+    padding: 0
+    
     background-size: 20px
+    border-radius: 50%
     @include bonone
+    @include smart-hover
+      
+      &:hover
+        .modal-subscribe__line
+          background-color: #ff7e80
+  &__line
+    position: absolute
+    display: inline-block
+    height: 25px
+    width: 3px
+    border-radius: 5px
+    background-color: $border
+    left: 50%
+    top: 0
+    transition: .3s
+    &:nth-child(1)
+      transform: translateX(-50%) rotate(45deg)
+    &:nth-child(2)
+      transform: translateX(-50%) rotate(-45deg)
+    
+
   &__dialog
     position: fixed
     z-index: 250
@@ -39,12 +62,10 @@
     @media ( max-height: 490px )
       top: 85px
       transform: translate(-50%, 0)
-      
+
     @media ( max-height: 429px )
       height: calc(100% - 90px)
       overflow-y: auto
-  
+
   &__holder
     margin-bottom: 25px
-
-

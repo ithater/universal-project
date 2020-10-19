@@ -10,27 +10,58 @@ export default class Validation {
 		// 		email
 		// 	}
 		// }
+		message,
+		type
 	}) {
-		this.form = document.querySelector(form);
-		this.emailInput = document.querySelector('#' + email.id);
-		this.valid = false;
-		this.display = false;
-		this.error = error;
+		this.type = type;
 
-		const errElem = document.createElement('label');
-		errElem.for = email.id;
-		errElem.className = error.className;
+		if (this.type === 'email') {
+			this.form = document.querySelector(form);
+			this.emailInput = document.querySelector('#' + email.id);
+			this.valid = false;
+			this.display = false;
+			this.error = error;
 
-		this.errElem = errElem;
-		this.onInput = false;
+			const errElem = document.createElement('label');
+			errElem.for = email.id;
+			errElem.className = error.className;
+
+			this.errElem = errElem;
+			this.onInput = false;
+			this.init();
+		}
+
+		if (this.type === 'message') {
+			this.form = document.querySelector(form);
+			this.messageInput = document.querySelector('#' + message.id);
+			this.valid = false;
+			this.display = false;
+			this.error = error;
+
+			const errElem = document.createElement('label');
+			errElem.for = message.id;
+			errElem.className = error.className;
+
+			this.errElem = errElem;
+			this.onInput = false;
+		}
+
 		this.init();
+
+	}
+
+	validateMessage(value) {
+		return value.trim() >= 100;
 	}
 
 	onInputValidation() {
 		this.form.addEventListener('input', () => {
-			const value = this.emailInput.value;
+			let value;
+			if (this.type === 'email') value = this.emailInput.value;
+			else if (this.type === 'message') value = this.messageInput.value;
 			const display = this.display;
-			this.valid = this.validateEmail(value);
+			if (this.type === 'email') this.valid = this.validateEmail(value);
+			else if (this.type === 'message') this.valid = this.validateMessage(value);
 			this.onInput = true;
 
 			if (this.valid) {
@@ -49,11 +80,19 @@ export default class Validation {
 					}
 				} else {
 					if (display) {
-						this.errElem.textContent =  this.error.message.email;
+						if (this.type === 'email') this.errElem.textContent =  this.error.message.email;
+						else if (this.type === 'message') this.errElem.textContent =  this.error.message.length;
 					} else {
-						this.emailInput.insertAdjacentElement('afterend', this.errElem);
-						this.errElem.textContent =  this.error.message.email;
-						this.display = true;
+						if (this.type === 'email') {
+							this.emailInput.insertAdjacentElement('afterend', this.errElem);
+							this.errElem.textContent =  this.error.message.email;
+							this.display = true;
+						}	else if (this.type === 'message') {
+							this.messageInput.insertAdjacentElement('afterend', this.errElem);
+							this.errElem.textContent =  this.error.message.length;
+							this.display = true;
+						}
+
 					}
 				}
 			}
@@ -63,9 +102,12 @@ export default class Validation {
 	init() {
 		this.form.addEventListener('submit', evt => {
 			evt.preventDefault();
-			const value = this.emailInput.value;
+			let value;
+			if (this.type === 'email') value = this.emailInput.value;
+			else if (this.type === 'message') value = this.messageInput.value;
 			const display = this.display;
-			this.valid = this.validateEmail(value);
+			if (this.type === 'email') this.valid = this.validateEmail(value);
+			else if (this.type === 'message') this.valid = this.validateMessage(value);
 
 			if (!this.onInput) {
 				if (this.valid) {
@@ -78,17 +120,27 @@ export default class Validation {
 						if (display) {
 							this.errElem.textContent =  this.error.message.require;
 						} else {
-							this.emailInput.insertAdjacentElement('afterend', this.errElem);
+							if (this.type === 'email') this.emailInput.insertAdjacentElement('afterend', this.errElem);
+							if (this.type === 'message') this.messageInput
+								.insertAdjacentElement('afterend', this.errElem);
 							this.errElem.textContent =  this.error.message.require;
 							this.display = true;
 						}
 					} else {
 						if (display) {
-							this.errElem.textContent =  this.error.message.email;
+							if (this.type === 'email') this.errElem.textContent =  this.error.message.email;
+							else if (this.type === 'message') this.errElem.textContent =  this.error.message.length;
 						} else {
-							this.emailInput.insertAdjacentElement('afterend', this.errElem);
-							this.errElem.textContent =  this.error.message.email;
-							this.display = true;
+							if (this.type === 'email') {
+								this.emailInput.insertAdjacentElement('afterend', this.errElem);
+								this.errElem.textContent =  this.error.message.email;
+								this.display = true;
+							}	else if (this.type === 'message') {
+								this.messageInput.insertAdjacentElement('afterend', this.errElem);
+								this.errElem.textContent =  this.error.message.length;
+								this.display = true;
+							}
+
 						}
 					}
 				}

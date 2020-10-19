@@ -3,7 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Universal - налог на самозанятых.</title>
+    <title>Universal - налог на самозанятых.</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/image/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/image/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/image/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 	</head>
 	<body>
 		<header class="header header--light">
@@ -794,8 +801,7 @@
 								/>
 							</noscript>
 							<h2 class="featured-articles__title">
-								Техника работы по <br />
-								помидоркам — это как?
+								В вашем портфолио могут <br /> быть фейковые работы
 							</h2>
 							<div class="stats">
 								<div class="stats__views">
@@ -1104,7 +1110,7 @@
         <!-- /.comments__container -->
 
         <div class="comments__container comments__container--pt-30">
-          <form method="post" id="add-comment" class="comments-add-comment">
+          <form method="post" novalidate id="add-comment" class="comments-add-comment">
             <noscript class="loading-lazy">
               <img
                 src="./assets/image/current-user.png"
@@ -1120,7 +1126,7 @@
               </div>
               <!-- /.comments-add-comment__holder -->
               <button type="submit"  class="button-arrow comments-add-comment__button">
-                <span class="button-arrow__read">отправить</span>
+                <span class="button-arrow__read">Отправить</span>
                 <noscript class="loading-lazy">
                   <img
                     class="button-arrow__arrow-icon"
@@ -1135,10 +1141,6 @@
             </form>
         </div>
         <!-- /.comments__container -->
-
-        
-          
-
         </from>
         <!-- /.comments-add -->
       </div>
@@ -1439,7 +1441,10 @@
 			<!-- /.modal-subscribe__overlay -->
 
 			<div class="modal-subscribe__dialog">
-				<button class="modal-subscribe__close"></button>
+				<button class="modal-subscribe__close">
+          <span class="modal-subscribe__line"></span>
+          <span class="modal-subscribe__line"></span>
+        </button>
 				<div class="subscribe">
 					<h2 class="subscribe__title">
 						Подпишитесь <br />
@@ -1478,7 +1483,12 @@
 			<!-- /.modal-subscribe__overlay -->
 
 			<div class="modal-result__dialog">
-				<button class="modal-result__close"></button>
+
+        <button class="modal-result__close">
+          <span class="modal-result__line"></span>
+          <span class="modal-result__line"></span>
+        </button>
+
 				<h2 class="modal-result__title">Спасибо за то, что доверяете нам...</h2>
 				<span class="modal-result__text">Скоро вам придет 1 рассылка.</span>
 			</div>
