@@ -86,7 +86,7 @@ module.exports = {
 	optimization: optimization(),
 	devServer: {
 		port: 5500,
-		host: '192.168.0.12',
+		host: '192.168.0.14',
 		// hot: isDev,
 		inline: isDev,
 		publicPath: '',
@@ -107,6 +107,22 @@ module.exports = {
 				collapseWhitespace: isProd
       },
       filename: 'article.html',
+			chunks: ['article'],
+		}),
+		new HTMLWebpackPlugin({
+			template: `${PATHS.src}/demo-article-0.html`,
+			minify: {
+				collapseWhitespace: isProd
+      },
+      filename: 'demo-article-0.html',
+			chunks: ['article'],
+		}),
+		new HTMLWebpackPlugin({
+			template: `${PATHS.src}/demo-article-2.html`,
+			minify: {
+				collapseWhitespace: isProd
+      },
+      filename: 'demo-article-2.html',
 			chunks: ['article'],
 		}),
 		new CleanWebpackPlugin(),
