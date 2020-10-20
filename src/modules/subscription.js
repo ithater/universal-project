@@ -5,35 +5,43 @@ const subscription = () => {
 	const modalForm = document.getElementById('modal-subscribe-form');
 	const modalSubscr = document.querySelector('.modal-subscribe');
 	const modalThx = document.querySelector('.modal-result');
-	// eslint-disable-next-line no-useless-escape
+
+	const validateEmail = value => {
+		if (value.trim() === '') return 'require';
+		// eslint-disable-next-line no-useless-escape
+		const isEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(value);
+		if (isEmail) return 'valid';
+		else return 'invalid';
+	};
+
+	const message = {
+		require: 'Данное поле должно быть заполнено',
+		invalid: 'Введите корректный email'
+	};
+
 
 	const footerFormValidation = new Validation({
-		form: '#subscribe-form',
-		email: {
-			id: 'subscribe-email'
+		formId: 'subscribe-form',
+		input: {
+			inputId: 'subscribe-email',
+			validationFunc: validateEmail,
 		},
 		error: {
 			className: 'invalid',
-			message: {
-				require: 'Данное поле должно быть заполнено',
-				email: 'Введите корректный email'
-			}
+			message
 		},
-		type: 'email'
+
 	});
 
 	const modalFormValidation = new Validation({
-		type: 'email',
-		form: '#modal-subscribe-form',
-		email: {
-			id: 'modal-subscribe-email'
+		formId: 'modal-subscribe-form',
+		input: {
+			inputId: 'modal-subscribe-email',
+			validationFunc: validateEmail,
 		},
 		error: {
 			className: 'invalid',
-			message: {
-				require: 'Данное поле должно быть заполнено',
-				email: 'Введите корректный email'
-			}
+			message
 		}
 	});
 
@@ -43,7 +51,7 @@ const subscription = () => {
 		evt.preventDefault();
 		const valid = footerFormValidation.valid;
 		const form = evt.target;
-		if (valid) {
+		if (valid === 'valid') {
 			const fromData = new FormData(form);
 			fetch('./assets/php/send.php', {
 				method: 'POST',
@@ -52,7 +60,6 @@ const subscription = () => {
 				.then(response => {
 					if (response.status !== 200) throw new Error(response.status);
 					form.querySelectorAll('input').forEach(input => {
-						console.log(input);
 						const type = input.type.toLowerCase();
 						if (type !== 'button' || type !== 'range') {
 							input.value = '';
@@ -69,7 +76,7 @@ const subscription = () => {
 		evt.preventDefault();
 		const valid = modalFormValidation.valid;
 		const form = evt.target;
-		if (valid) {
+		if (valid === 'valid') {
 			const fromData = new FormData(form);
 			fetch('./assets/php/send.php', {
 				method: 'POST',

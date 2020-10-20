@@ -1,158 +1,90 @@
 export default class Validation {
 	constructor({
-		form,
-		email,
+		formId,
+		input: {
+			inputId,
+			validationFunc
+		},
 		error,
 		//  {
 		// 	className,
 		// 	message: {
 		// 		require,
-		// 		email
+		// 		invalid
 		// 	}
 		// }
-		message,
-		type
 	}) {
-		this.type = type;
-
-		if (this.type === 'email') {
-			this.form = document.querySelector(form);
-			this.emailInput = document.querySelector('#' + email.id);
-			this.valid = false;
-			this.display = false;
-			this.error = error;
-
-			const errElem = document.createElement('label');
-			errElem.for = email.id;
-			errElem.className = error.className;
-
-			this.errElem = errElem;
-			this.onInput = false;
-			this.init();
-		}
-
-		if (this.type === 'message') {
-			this.form = document.querySelector(form);
-			this.messageInput = document.querySelector('#' + message.id);
-			this.valid = false;
-			this.display = false;
-			this.error = error;
-
-			const errElem = document.createElement('label');
-			errElem.for = message.id;
-			errElem.className = error.className;
-
-			this.errElem = errElem;
-			this.onInput = false;
-		}
-
+		this.form = document.getElementById(formId);
+		this.input = document.getElementById(inputId);
+		this.valid = 'invalid';
+		this.display = false;
+		this.error = error;
+		const errElem = document.createElement('label');
+		errElem.for = inputId.id;
+		errElem.className = error.className;
+		this.errElem = errElem;
+		this.validationFunc = validationFunc;
+		this.onInput = false;
 		this.init();
-
-	}
-
-	validateMessage(value) {
-		return value.trim() >= 100;
 	}
 
 	onInputValidation() {
-		this.form.addEventListener('input', () => {
-			let value;
-			if (this.type === 'email') value = this.emailInput.value;
-			else if (this.type === 'message') value = this.messageInput.value;
-			const display = this.display;
-			if (this.type === 'email') this.valid = this.validateEmail(value);
-			else if (this.type === 'message') this.valid = this.validateMessage(value);
-			this.onInput = true;
+		this.onInput = true;
+		this.form.addEventListener('input', this.inputHandler.bind(this));
+	}
 
-			if (this.valid) {
+	inputHandler(evt) {
+		evt.preventDefault();
+		const value = this.input.value;
+		const display = this.display;
+		this.valid = this.validationFunc(value);
+
+		this.displayValidationResult(display);
+	}
+
+	displayValidationResult(display) {
+		switch (this.valid) {
+			case 'valid':
 				if (display) {
 					this.errElem.remove();
 					this.display = false;
 				}
-			} else {
-				if (value.trim() === '') {
-					if (display) {
-						this.errElem.textContent =  this.error.message.require;
-					} else {
-						this.emailInput.insertAdjacentElement('afterend', this.errElem);
-						this.errElem.textContent =  this.error.message.require;
-						this.display = true;
-					}
+				break;
+			case 'require':
+				if (display) {
+					this.errElem.textContent =  this.error.message.require;
 				} else {
-					if (display) {
-						if (this.type === 'email') this.errElem.textContent =  this.error.message.email;
-						else if (this.type === 'message') this.errElem.textContent =  this.error.message.length;
-					} else {
-						if (this.type === 'email') {
-							this.emailInput.insertAdjacentElement('afterend', this.errElem);
-							this.errElem.textContent =  this.error.message.email;
-							this.display = true;
-						}	else if (this.type === 'message') {
-							this.messageInput.insertAdjacentElement('afterend', this.errElem);
-							this.errElem.textContent =  this.error.message.length;
-							this.display = true;
-						}
-
-					}
+					this.input.insertAdjacentElement('afterend', this.errElem);
+					this.errElem.textContent =  this.error.message.require;
+					this.display = true;
 				}
-			}
-		});
+				break;
+			case 'invalid':
+				if (display) {
+					this.errElem.textContent =  this.error.message.invalid;
+				} else {
+					this.input.insertAdjacentElement('afterend', this.errElem);
+					this.errElem.textContent =  this.error.message.invalid;
+					this.display = true;
+				}
+				break;
+		}
+	}
+
+	initHandler(evt) {
+		evt.preventDefault();
+		if (this.onInput) return;
+
+
+		const value = this.input.value;
+		const display = this.display;
+		this.valid = this.validationFunc(value);
+
+		this.displayValidationResult(display);
+		this.onInputValidation();
 	}
 
 	init() {
-		this.form.addEventListener('submit', evt => {
-			evt.preventDefault();
-			let value;
-			if (this.type === 'email') value = this.emailInput.value;
-			else if (this.type === 'message') value = this.messageInput.value;
-			const display = this.display;
-			if (this.type === 'email') this.valid = this.validateEmail(value);
-			else if (this.type === 'message') this.valid = this.validateMessage(value);
-
-			if (!this.onInput) {
-				if (this.valid) {
-					if (display) {
-						this.errElem.remove();
-						this.display = false;
-					}
-				} else {
-					if (value.trim() === '') {
-						if (display) {
-							this.errElem.textContent =  this.error.message.require;
-						} else {
-							if (this.type === 'email') this.emailInput.insertAdjacentElement('afterend', this.errElem);
-							if (this.type === 'message') this.messageInput
-								.insertAdjacentElement('afterend', this.errElem);
-							this.errElem.textContent =  this.error.message.require;
-							this.display = true;
-						}
-					} else {
-						if (display) {
-							if (this.type === 'email') this.errElem.textContent =  this.error.message.email;
-							else if (this.type === 'message') this.errElem.textContent =  this.error.message.length;
-						} else {
-							if (this.type === 'email') {
-								this.emailInput.insertAdjacentElement('afterend', this.errElem);
-								this.errElem.textContent =  this.error.message.email;
-								this.display = true;
-							}	else if (this.type === 'message') {
-								this.messageInput.insertAdjacentElement('afterend', this.errElem);
-								this.errElem.textContent =  this.error.message.length;
-								this.display = true;
-							}
-
-						}
-					}
-				}
-
-				this.onInputValidation();
-				this.onInput = true;
-			}
-		});
-	}
-
-	validateEmail(data)  {
-		// eslint-disable-next-line no-useless-escape
-		return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(data);
+		this.form.addEventListener('submit', this.initHandler.bind(this));
 	}
 }

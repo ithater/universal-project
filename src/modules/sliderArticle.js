@@ -17,8 +17,8 @@ const sliderArticle = () => {
 			enabled: true,
 			onlyInViewport: true,
 			pageUpDown: false,
-    },
-    autoHeight: true,
+		},
+		autoHeight: true,
 	});
 };
 

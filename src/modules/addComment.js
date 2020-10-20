@@ -5,26 +5,31 @@ const addComment = () => {
 	const messageArea = document.getElementById('message');
 
 	const сommentValidation = new Validation({
-		form: '#add-comment',
-		message: {
-			id: 'message'
+		formId: 'add-comment',
+		input: {
+			inputId: 'message',
+			validationFunc(value) {
+				const clearValue = value.trim();
+
+				if (clearValue === '') return 'require';
+				else if (clearValue.length < 99) return 'invalid';
+				else if (clearValue.length >= 100) return 'valid';
+			}
 		},
 		error: {
 			className: 'invalid-message',
 			message: {
 				require: 'Данное поле должно быть заполнено',
-				length: 'Введите минимум 100 символов'
+				invalid: 'Введите минимум 100 символов'
 			}
 		},
-		type: 'message'
 	});
 
 
 
 	const addComment = evt => {
 		evt.preventDefault();
-
-		if (!сommentValidation.valide) return;
+		if (сommentValidation.valid !== 'valid') return;
 
 		const { date, name, message, image  } = {
 			date() {

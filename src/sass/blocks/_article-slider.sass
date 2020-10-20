@@ -11,9 +11,8 @@
     position: relative
     z-index: 10
     width: 100%
-    min-height: fit-content
     overflow: hidden
-    height: auto
+
 
   
   &-button
@@ -37,7 +36,7 @@
     &--prev
       left: 35px
       @include _767
-        left: 25px
+        left: 12px
       
     &--next
       right: 35px
@@ -45,9 +44,10 @@
         right: 12px
 
   &__slide
+    position: relative
     display: flex
     flex-direction: column
-    height: 100%
+
   &__image
     width: 100%
     height: 555px
@@ -59,7 +59,7 @@
   &-info
     display: flex
     justify-content: space-between
-    align-items: center
+    align-items: stretch
     padding-left: 20px
     border-top: 1px solid $border
     @include _767
@@ -67,22 +67,24 @@
       align-items: flex-start
       padding-left: 0
     &__text
+      display: flex
+      align-items: center
       font-size: 14px
       line-height: 20px
       color: #4B5157
       padding-top: 9px
       padding-bottom: 9px
       @include _992 
-        max-width: 354px
+        // max-width: 354px
+        padding-right: 10px
       @include _767
-      padding-left: 14px
+        padding-left: 14px
     &-author
       display: flex
       align-items: center
       padding: 12px 10px 13px 30px
       border-left: 1px solid $border
       min-width: 262px
-      height: 100%
       @include _767
         border-left: none
         border-top: 1px solid $border
